@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91fb4d07-00b1-4927-bbf4-b492c1cae43f" name="Default Changelist" comment="" />
+    <list default="true" id="91fb4d07-00b1-4927-bbf4-b492c1cae43f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/entity/ChessOpening.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/entity/Country.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/entity/Event.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/entity/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/entity/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/entity/Result.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/entity/Site.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/repository/ChessOpeningRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/repository/CountryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/repository/EventRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/repository/GameRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/repository/PlayerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/repository/ResultRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/repository/SiteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,8 +30,12 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -23,10 +45,12 @@
     </option>
   </component>
   <component name="ProjectId" id="1TThWyy7YpycvsewqaJX8tNw5h3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ChessManager" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../StudentApp" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -52,11 +76,27 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573490027046</updated>
-      <workItem from="1573490030102" duration="559000" />
+      <workItem from="1573490030102" duration="1647000" />
+      <workItem from="1573572909799" duration="3394000" />
+      <workItem from="1573658333787" duration="681000" />
+      <workItem from="1573659096803" duration="3125000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
