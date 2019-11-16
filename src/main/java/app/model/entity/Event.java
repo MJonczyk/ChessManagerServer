@@ -6,10 +6,10 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "events")
+@Table(name = "chess_events")
 public class Event {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "event_id")
     private Long id;
 

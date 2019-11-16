@@ -3,14 +3,14 @@ package app.model.entity;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Date;
+
 
 @Data
 @Entity
 @Table(name = "games")
 public class Game {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "game_id")
     private Long id;
 
@@ -31,7 +31,7 @@ public class Game {
     private Player black;
 
     @ManyToOne
-    @Column(name = "result_id")
+    @JoinColumn(name = "result_id")
     private Result result;
 
     @ManyToOne
@@ -39,7 +39,7 @@ public class Game {
     private ChessOpening chessOpening;
 
     @Column(name = "game_date")
-    private Date date;
+    private String date;
 
     @Column(name = "round")
     private String round;
@@ -52,4 +52,21 @@ public class Game {
 
     @Column(name = "black_elo")
     private int blackElo;
+
+    public Game() {}
+
+    public Game(Event event, Site site, Player white, Player black, Result result, ChessOpening chessOpening,
+                String date, String round, String moves, int whiteElo, int blackElo) {
+        this.event = event;
+        this.site = site;
+        this.white = white;
+        this.black = black;
+        this.result = result;
+        this.chessOpening = chessOpening;
+        this.date = date;
+        this.round = round;
+        this.moves = moves;
+        this.whiteElo = whiteElo;
+        this.blackElo = blackElo;
+    }
 }

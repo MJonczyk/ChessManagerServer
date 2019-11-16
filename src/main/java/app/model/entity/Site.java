@@ -9,14 +9,14 @@ import javax.persistence.*;
 @Table(name = "sites")
 public class Site {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "site_id")
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "country_id")
-    private Country country;
+//    @ManyToOne
+//    @JoinColumn(name = "country_id")
+//    private Country country;
 
-    @Column(name = "city")
-    private String city;
+    @Column(name = "site_name")
+    private String name;
 }

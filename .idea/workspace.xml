@@ -2,23 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91fb4d07-00b1-4927-bbf4-b492c1cae43f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/entity/ChessOpening.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/entity/Country.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/entity/Event.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/entity/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/entity/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/entity/Result.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/entity/Site.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/repository/ChessOpeningRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/repository/CountryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/repository/EventRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/repository/GameRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/repository/PlayerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/repository/ResultRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/repository/SiteRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/controller/FileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/controller/GameController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/controller/parser/GameParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/controller/service/FileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/controller/service/GameService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/dto/GameDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/parser/PGNParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/parser/PGNParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/model/entity/ChessOpening.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/entity/ChessOpening.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/model/entity/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/entity/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/model/entity/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/entity/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/model/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/model/entity/Site.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/entity/Site.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/model/repository/ChessOpeningRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/repository/ChessOpeningRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/model/repository/CountryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/repository/CountryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/model/repository/EventRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/repository/EventRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/model/repository/PlayerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/repository/PlayerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/model/repository/ResultRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/repository/ResultRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/model/repository/SiteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/repository/SiteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +32,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -47,6 +50,10 @@
   <component name="ProjectId" id="1TThWyy7YpycvsewqaJX8tNw5h3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -66,6 +73,40 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="Spring Boot.CMApplication">
+    <configuration name="PGNParser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="app.controller.parser.PGNParser" />
+      <module name="chessmanager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.controller.parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CMApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="chessmanager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="app.CMApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.CMApplication" />
+        <item itemvalue="Application.PGNParser" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -79,7 +120,11 @@
       <workItem from="1573490030102" duration="1647000" />
       <workItem from="1573572909799" duration="3394000" />
       <workItem from="1573658333787" duration="681000" />
-      <workItem from="1573659096803" duration="3125000" />
+      <workItem from="1573659096803" duration="3192000" />
+      <workItem from="1573729251486" duration="9209000" />
+      <workItem from="1573818772879" duration="10898000" />
+      <workItem from="1573903679887" duration="4127000" />
+      <workItem from="1573908724349" duration="11730000" />
     </task>
     <servers />
   </component>
