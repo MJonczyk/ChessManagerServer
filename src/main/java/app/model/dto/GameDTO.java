@@ -3,7 +3,6 @@ package app.model.dto;
 import app.model.entity.Game;
 import lombok.Data;
 
-import java.util.Date;
 
 @Data
 public class GameDTO {
@@ -12,6 +11,7 @@ public class GameDTO {
     }
 
     public GameDTO(Game game) {
+        this.id = game.getId();
         this.event = game.getEvent().getName();
         this.site = game.getSite().getName();
         this.white = game.getWhite().getName();
@@ -25,6 +25,7 @@ public class GameDTO {
         this.blackElo = game.getBlackElo();
     }
 
+    private Long id;
     private String event;
     private String site;
     private String white;

@@ -1,4 +1,4 @@
-package app.controller;
+package app.controller.controller;
 
 import app.controller.service.FileService;
 import app.controller.service.GameService;

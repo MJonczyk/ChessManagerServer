@@ -45,10 +45,10 @@ public class PGNParser implements GameParser{
         if (gameDTO.getChessOpening() != null)
             lines.add(createValue("ECO", gameDTO.getChessOpening()));
         lines.add("\n");
-
-        createMoves(gameDTO.getMoves());
-
         lines.add("\n");
+
+        lines.addAll(createMoves(gameDTO.getMoves()));
+        
 
         return lines;
     }
@@ -132,6 +132,7 @@ public class PGNParser implements GameParser{
                 startIndex += line.length();
                 endIndex += line.length();
             }
+            movesInLines.add("\n");
             if (endIndex > moves.length()) {
                 endIndex = moves.length();
                 count++;
