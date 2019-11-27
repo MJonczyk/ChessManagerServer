@@ -2,12 +2,19 @@ package app.controller.controller;
 
 import app.controller.service.FileService;
 import app.controller.service.GameService;
+import app.controller.service.UserService;
 import app.model.dto.GameDTO;
 import app.model.entity.Game;
+import app.model.entity.Role;
+import app.model.entity.User;
+import app.security.JwtTokenGenerator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -18,30 +25,45 @@ import java.util.List;
 public class FileController {
     private final FileService fileService;
     private final GameService gameService;
+    private final UserService userService;
+    private final JwtTokenGenerator tokenGenerator;
+    private Logger logger = LoggerFactory.getLogger(FileController.class);
 
-    public FileController(FileService fileService, GameService gameService) {
+    public FileController(FileService fileService, GameService gameService, UserService userService,
+                          JwtTokenGenerator tokenGenerator) {
         this.fileService = fileService;
         this.gameService = gameService;
+        this.userService = userService;
+        this.tokenGenerator = tokenGenerator;
     }
 
+    @Secured({"ROLE_ADMIN", "ROLE_USER"})
     @PostMapping(value = "/upload")
-    public ResponseEntity uploadPGN(@RequestParam("file") MultipartFile pgnFile) {
+    public ResponseEntity uploadPGN(@RequestParam("file") MultipartFile pgnFile,
+                                    @RequestHeader("Authorization") String token) {
+        token = token.substring(7);
+        logger.info("POST: /upload");
+        User user = userService.getOneByLogin(tokenGenerator.getUsernameFromToken(token));
+        Role role = userService.getUsersRoles(user.getLogin()).get(0);
+        logger.info(role.getName());
         try {
             List<GameDTO> games = fileService.parsePGN(pgnFile.getInputStream());
-            gameService.add(games);
+            gameService.add(games, role, user);
         }
         catch (IOException e) {
-            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
-        return new ResponseEntity(HttpStatus.OK);
+        return ResponseEntity.status(HttpStatus.OK).body(null);
     }
 
+    @Secured({"ROLE_ADMIN", "ROLE_USER"})
     @GetMapping(value = "/download/{id}")
     public ResponseEntity<byte[]> downloadPGN(@PathVariable Long id) {
+        logger.info("GET: /download");
         Game game = gameService.findOne(id);
 
         if (game == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 
         List<String> lines = fileService.getPGN(new GameDTO(game));
@@ -52,7 +74,8 @@ public class FileController {
         responseHeaders.setContentLength(byteContent.length);
         responseHeaders.setContentType(new MediaType("text", "plain"));
         responseHeaders.setCacheControl("must-revalidate, post-check=0, pre-check=0");
-        responseHeaders.set(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + id.toString());
+        responseHeaders.set(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=game_" + id.toString() + ".pgn");
+        responseHeaders.add(HttpHeaders.ACCESS_CONTROL_EXPOSE_HEADERS, HttpHeaders.CONTENT_DISPOSITION);
 
         return new ResponseEntity<byte[]>(byteContent, responseHeaders, HttpStatus.OK);
     }

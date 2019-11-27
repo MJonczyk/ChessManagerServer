@@ -2,18 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91fb4d07-00b1-4927-bbf4-b492c1cae43f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controller/assembler/GameResourceAssembler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controller/controller/advice/GameNotFoundAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controller/controller/exception/GameNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/controller/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/controller/service/CmUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/controller/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/dto/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/entity/GameType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/entity/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/repository/GameTypeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/repository/RoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/request/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/request/RegistrationRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/response/JwtTokenAuthResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/model/response/RegistrationResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/security/JwtAuthenticationEntryPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/security/JwtRequestFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/security/JwtTokenGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/security/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/security/WebMvcConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/controller/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/controller/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/assembler/GameResourceAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/assembler/GameResourceAssembler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/controller/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/controller/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/parser/PGNParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/parser/PGNParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/service/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/service/GameService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/model/dto/GameDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/dto/GameDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/FileController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/GameController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/parser/PGNParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/parser/PGNParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/model/entity/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/entity/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/model/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/model/repository/GameRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/model/repository/GameRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/assembler/GameResourceAssembler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/assembler/GameResourceAssembler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/controller/FileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/controller/FileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/controller/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/controller/GameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/service/GameService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/service/GameService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/model/dto/GameDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/model/dto/GameDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/model/entity/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/model/entity/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/model/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/model/entity/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +51,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="AnnotationType" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -117,7 +145,16 @@
       <workItem from="1573818772879" duration="10898000" />
       <workItem from="1573903679887" duration="4127000" />
       <workItem from="1573908724349" duration="12010000" />
-      <workItem from="1574009625115" duration="5338000" />
+      <workItem from="1574009625115" duration="6570000" />
+      <workItem from="1574086927983" duration="5193000" />
+      <workItem from="1574163685222" duration="4214000" />
+      <workItem from="1574253790282" duration="23000" />
+      <workItem from="1574326780472" duration="1446000" />
+      <workItem from="1574413369373" duration="2406000" />
+      <workItem from="1574520920167" duration="599000" />
+      <workItem from="1574585586337" duration="23087000" />
+      <workItem from="1574672706673" duration="12988000" />
+      <workItem from="1574765335353" duration="19967000" />
     </task>
     <servers />
   </component>

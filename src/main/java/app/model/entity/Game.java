@@ -1,11 +1,15 @@
 package app.model.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "games")
 public class Game {
@@ -53,10 +57,17 @@ public class Game {
     @Column(name = "black_elo")
     private int blackElo;
 
-    public Game() {}
+    @ManyToOne
+    @JoinColumn(name = "game_type_id")
+    private GameType gameType;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
 
     public Game(Event event, Site site, Player white, Player black, Result result, ChessOpening chessOpening,
-                String date, String round, String moves, int whiteElo, int blackElo) {
+                String date, String round, String moves, int whiteElo, int blackElo, GameType gameType) {
         this.event = event;
         this.site = site;
         this.white = white;
@@ -68,5 +79,6 @@ public class Game {
         this.moves = moves;
         this.whiteElo = whiteElo;
         this.blackElo = blackElo;
+        this.gameType = gameType;
     }
 }

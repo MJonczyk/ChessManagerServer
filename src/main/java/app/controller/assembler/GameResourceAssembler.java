@@ -16,6 +16,7 @@ public class GameResourceAssembler implements ResourceAssembler<GameDTO, Resourc
     public Resource<GameDTO> toResource(GameDTO gameDTO) {
         return new Resource<>(gameDTO,
                 linkTo(methodOn(GameController.class).getOne(gameDTO.getId())).withSelfRel(),
-                linkTo(methodOn(GameController.class).getAll()).withRel("games"));
+                linkTo(methodOn(GameController.class).getAll("token")).withRel("games"));
     }
+
 }

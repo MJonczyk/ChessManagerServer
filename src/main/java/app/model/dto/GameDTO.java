@@ -23,6 +23,7 @@ public class GameDTO {
         this.moves = game.getMoves();
         this.whiteElo = game.getWhiteElo();
         this.blackElo = game.getBlackElo();
+        this.gameType = game.getGameType().getName();
     }
 
     private Long id;
@@ -37,4 +38,5 @@ public class GameDTO {
     private String moves;
     private int whiteElo;
     private int blackElo;
+    private String gameType;
 }

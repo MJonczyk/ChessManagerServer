@@ -10,25 +10,27 @@ import java.util.List;
 
 @Service
 public class GameService {
-
     private final GameRepository gameRepository;
     private final EventRepository eventRepository;
     private final SiteRepository siteRepository;
     private final PlayerRepository playerRepository;
     private final ResultRepository resultRepository;
     private final ChessOpeningRepository chessOpeningRepository;
-    private final CountryRepository countryRepository;
+    private final GameTypeRepository gameTypeRepository;
+    private final UserRepository userRepository;
 
     public GameService(GameRepository gameRepository, EventRepository eventRepository, SiteRepository siteRepository,
                        PlayerRepository playerRepository, ResultRepository resultRepository,
-                       ChessOpeningRepository chessOpeningRepository, CountryRepository countryRepository) {
+                       ChessOpeningRepository chessOpeningRepository, GameTypeRepository gameTypeRepository,
+                       UserRepository userRepository) {
         this.gameRepository = gameRepository;
         this.eventRepository = eventRepository;
         this.siteRepository = siteRepository;
         this.playerRepository = playerRepository;
         this.resultRepository = resultRepository;
         this.chessOpeningRepository = chessOpeningRepository;
-        this.countryRepository = countryRepository;
+        this.gameTypeRepository = gameTypeRepository;
+        this.userRepository = userRepository;
     }
 
     public GameDTO getOne(Long id) {
@@ -40,8 +42,18 @@ public class GameService {
         return new GameDTO(game);
     }
 
-    public List<GameDTO> getAll() {
-        List<Game> games = gameRepository.findAll();
+    public List<GameDTO> getAll(User user) {
+        List<Game> games;
+
+        if (user == null)
+            games = gameRepository.findAllByGameTypeEquals(gameTypeRepository.getOne(1L));
+        else if (userRepository.getUsersRole(user.getLogin()).get(0).getName().equals("ROLE_USER")) {
+            games = gameRepository.findAllByGameTypeEquals(gameTypeRepository.getOne(1L));
+            games.addAll(gameRepository.findAllByUserEquals(user));
+        }
+        else
+            games = gameRepository.findAll();
+
         List<GameDTO> gameDTOS = new LinkedList<>();
 
         for(Game g : games)
@@ -58,7 +70,7 @@ public class GameService {
         return gameRepository.findById(id).orElse(null);
     }
 
-    public void add(List<GameDTO> games) {
+    public void add(List<GameDTO> games, Role role, User user) {
         for (GameDTO gameDTO : games) {
             Game game = parseGameDto(gameDTO);
 
@@ -91,10 +103,22 @@ public class GameService {
             }
 
             if (game.getChessOpening() == null) {
-                ChessOpening chessOpening= new ChessOpening();
+                ChessOpening chessOpening = new ChessOpening();
                 chessOpening.setCode(gameDTO.getChessOpening());
                 chessOpeningRepository.save(chessOpening);
                 game.setChessOpening(chessOpening);
+            }
+
+            if (game.getGameType() == null) {
+                if (role.getName().equals("ROLE_ADMIN")) {
+                    game.setGameType(gameTypeRepository.findGameTypeByName("public"));
+                } else if (role.getName().equals("ROLE_USER")) {
+                    game.setGameType(gameTypeRepository.findGameTypeByName("private"));
+                }
+            }
+
+            if (game.getUser() == null) {
+                game.setUser(user);
             }
 
             gameRepository.save(game);
@@ -108,8 +132,9 @@ public class GameService {
         Result result = resultRepository.findResultByResult(gameDTO.getResult());
         ChessOpening chessOpening = chessOpeningRepository.findChessOpeningByCode(gameDTO.getChessOpening());
         Site site = siteRepository.findSiteByName(gameDTO.getSite());
+        GameType gameType = gameTypeRepository.findGameTypeByName(gameDTO.getGameType());
 
         return new Game(event, site, whitePlayer, blackPlayer, result, chessOpening, gameDTO.getDate(),
-                gameDTO.getRound(), gameDTO.getMoves(), gameDTO.getWhiteElo(), gameDTO.getBlackElo());
+                gameDTO.getRound(), gameDTO.getMoves(), gameDTO.getWhiteElo(), gameDTO.getBlackElo(), gameType);
     }
 }

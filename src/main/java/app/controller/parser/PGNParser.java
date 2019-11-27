@@ -48,7 +48,7 @@ public class PGNParser implements GameParser{
         lines.add("\n");
 
         lines.addAll(createMoves(gameDTO.getMoves()));
-        
+
 
         return lines;
     }
