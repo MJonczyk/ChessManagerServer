@@ -1,6 +1,8 @@
-package app.security;
+package app.security.config;
 
 import app.controller.service.CmUserDetailsService;
+import app.security.service.JwtAuthenticationEntryPoint;
+import app.security.service.JwtRequestFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -61,6 +63,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/games").permitAll()
                 .antMatchers("/games/**").permitAll()
                 .antMatchers("/users").permitAll()
+                .antMatchers("/role/**").permitAll()
+//                .antMatchers("/download/games/**").permitAll()
                 // all other requests need to be authenticated
                 .anyRequest().authenticated().and()
                 // make sure we use stateless session; session won't be used to

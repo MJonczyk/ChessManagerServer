@@ -62,6 +62,20 @@ public class GameService {
         return gameDTOS;
     }
 
+    public List<GameDTO> getUsersGames(String username) {
+        User user = userRepository.findUserByLogin(username).orElse(null);
+        List<GameDTO> gameDTOS = new LinkedList<>();
+        if(user != null) {
+            List<Game> games = gameRepository.findAllByUserEquals(user);
+
+            for(Game g : games)
+                gameDTOS.add(new GameDTO(g));
+        }
+
+
+        return gameDTOS;
+    }
+
     public void delete(Long id) {
         gameRepository.deleteById(id);
     }

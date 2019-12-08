@@ -3,11 +3,12 @@ package app.controller.controller;
 import app.controller.service.CmUserDetailsService;
 import app.controller.service.UserService;
 import app.model.dto.UserDTO;
+import app.model.entity.Role;
 import app.model.entity.User;
 import app.model.request.LoginRequest;
 import app.model.response.JwtTokenAuthResponse;
 import app.model.response.RegistrationResponse;
-import app.security.JwtTokenGenerator;
+import app.security.service.JwtTokenGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -122,5 +123,15 @@ public class UserController {
         logger.info("delete: /users/id");
         userService.delete(id);
         return new ResponseEntity(HttpStatus.OK);
+    }
+
+    @GetMapping("/role/{username}")
+    public Role getUsersRole(@PathVariable String username) {
+        logger.info("get: /role/username");
+        List<Role> roles = userService.getUsersRoles(username);
+        if (roles.size() != 0)
+            return roles.get(0);
+        else
+            return null;
     }
 }

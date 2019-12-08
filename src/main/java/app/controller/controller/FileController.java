@@ -7,7 +7,7 @@ import app.model.dto.GameDTO;
 import app.model.entity.Game;
 import app.model.entity.Role;
 import app.model.entity.User;
-import app.security.JwtTokenGenerator;
+import app.security.service.JwtTokenGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.List;
 
 @RestController
@@ -75,6 +76,38 @@ public class FileController {
         responseHeaders.setContentType(new MediaType("text", "plain"));
         responseHeaders.setCacheControl("must-revalidate, post-check=0, pre-check=0");
         responseHeaders.set(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=game_" + id.toString() + ".pgn");
+        responseHeaders.add(HttpHeaders.ACCESS_CONTROL_EXPOSE_HEADERS, HttpHeaders.CONTENT_DISPOSITION);
+
+        return new ResponseEntity<byte[]>(byteContent, responseHeaders, HttpStatus.OK);
+    }
+
+    @Secured({"ROLE_USER"})
+    @GetMapping(value = "/download/games/{username}")
+    public ResponseEntity<byte[]> downloadDatabase(@PathVariable String username) {
+        logger.info("GET: /download/games/{username}");
+        List<GameDTO> games = gameService.getUsersGames(username);
+
+        if (games.size() == 0) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+
+        StringBuilder content = new StringBuilder();
+
+        for (GameDTO game: games) {
+            List<String> lines = fileService.getPGN(game);
+            content.append(String.join("", lines));
+            content.append("\n");
+            logger.info(String.valueOf(content.length()));
+        }
+
+
+        byte[] byteContent = content.toString().getBytes();
+
+        HttpHeaders responseHeaders = new HttpHeaders();
+        responseHeaders.setContentLength(byteContent.length);
+        responseHeaders.setContentType(new MediaType("text", "plain"));
+        responseHeaders.setCacheControl("must-revalidate, post-check=0, pre-check=0");
+        responseHeaders.set(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + username + "_db" + ".pgn");
         responseHeaders.add(HttpHeaders.ACCESS_CONTROL_EXPOSE_HEADERS, HttpHeaders.CONTENT_DISPOSITION);
 
         return new ResponseEntity<byte[]>(byteContent, responseHeaders, HttpStatus.OK);
