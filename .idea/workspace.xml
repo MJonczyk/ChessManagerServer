@@ -2,27 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91fb4d07-00b1-4927-bbf4-b492c1cae43f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/app/GameControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/app/UserControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/controller/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/service/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/service/GameService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/security/JwtAuthenticationEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/security/service/JwtAuthenticationEntryPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/security/JwtRequestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/security/service/JwtRequestFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/security/JwtTokenGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/security/service/JwtTokenGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/security/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/security/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/security/config/WebMvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/controller/FileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/controller/FileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/controller/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/controller/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controller/service/GameService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controller/service/GameService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/security/JwtAuthenticationEntryPoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/security/JwtRequestFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/security/JwtTokenGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/security/SecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/security/WebMvcConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,6 +45,11 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="app" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -89,6 +76,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GameControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chessmanager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="app" />
+      <option name="MAIN_CLASS_NAME" value="app.GameControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chessmanager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="app" />
+      <option name="MAIN_CLASS_NAME" value="app.UserControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CMApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="chessmanager" />
       <extension name="coverage">
@@ -104,6 +121,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserControllerTest" />
+        <item itemvalue="JUnit.GameControllerTest" />
         <item itemvalue="Spring Boot.CMApplication" />
         <item itemvalue="Application.PGNParser" />
       </list>
@@ -140,7 +159,8 @@
       <workItem from="1575128142186" duration="2173000" />
       <workItem from="1575445265096" duration="1345000" />
       <workItem from="1575725779572" duration="11594000" />
-      <workItem from="1575799407194" duration="3489000" />
+      <workItem from="1575799407194" duration="4686000" />
+      <workItem from="1575888473227" duration="2697000" />
     </task>
     <servers />
   </component>
